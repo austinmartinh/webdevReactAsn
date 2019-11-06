@@ -6,10 +6,17 @@ import TopBar from "../src/components/topBar/index.js";
 import SideBar from "../src/components/sideBar/index";
 import LoginForm from "../src/components/loginForm/index";
 import RegistrationForm from "../src/components/registrationForm/index";
-import CreateForm from "../src/components/createForm/index"
-import Post from "../src/components/post/index"
+import CreateForm from "../src/components/createForm/index";
+import Post from "../src/components/post/index";
+import Feed from "../src/components/feed/index";
 
+const testPost= {}
 
+var testPosts =[ 
+  {...testPost},
+    {...testPost},
+    {...testPost}
+]
 storiesOf("Navigation/TopBar", module).add("default", () => {
   return <TopBar />;
 });
@@ -32,6 +39,10 @@ storiesOf("Forms/CreatePost",module).add("default", () => {
 
 storiesOf("Content/Post",module).add("default", () => {
   return <Post />;
+});
+
+storiesOf("Content/Feed",module).add("default", () => {
+  return <Feed posts={testPosts} />;
 });
 
 
