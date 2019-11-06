@@ -1,27 +1,26 @@
 import React, { Component, Fragment } from "react";
 import './loginForm.css';
+import {Form,Button } from 'react-bootstrap'
 
 class LoginForm extends Component{
     render() {
         return <fragment>
             <div class="loginBox">
-                <form>
-                    <div class="form-group row">
-                        <label for="usernameEntry" class="col-sm-2 col-form-label">Username</label>
-                        <input type="text" placeholder="Username" id="userNameEntry"></input>
-                    </div>
-                    <div class="form-group row">
-                        <label for="passwordEntry" class="col-sm-2 col-form-label">Password</label>
-                        <input type="password" placeholder="********" id="passwordEntry"></input>
-                    </div>
-                    <div class="form-group row">
-                        <div class="form-col-10">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <Form>
+                <Form.Group controlId="usernameLogin">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="text" placeholder="Username"></Form.Control>
+                </Form.Group>
+                <Form.Group controlId="passForLogin">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="*******"></Form.Control>
+                </Form.Group>
+                <Form.Group>
+                    <Button type="submit">Login</Button>
+                </Form.Group>
 
+            </Form>
+            </div>
         </fragment>
     }
 }
