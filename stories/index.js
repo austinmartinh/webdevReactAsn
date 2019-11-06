@@ -6,6 +6,9 @@ import TopBar from "../src/components/topBar/index.js";
 import SideBar from "../src/components/sideBar/index";
 import LoginForm from "../src/components/loginForm/index";
 import RegistrationForm from "../src/components/registrationForm/index";
+import CreateForm from "../src/components/createForm/index"
+import Post from "../src/components/post/index"
+
 
 storiesOf("Navigation/TopBar", module).add("default", () => {
   return <TopBar />;
@@ -22,4 +25,13 @@ storiesOf("Forms/Login",module).add("default", () => {
 storiesOf("Forms/Register",module).add("default", () => {
   return <RegistrationForm />;
 });
+
+storiesOf("Forms/CreatePost",module).add("default", () => {
+  return <CreateForm />;
+});
+
+storiesOf("Content/Post",module).add("default", () => {
+  return <Post />;
+});
+
 

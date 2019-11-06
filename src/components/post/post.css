@@ -1,0 +1,22 @@
+#imgBox {
+    border:black 3px solid;
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+    min-width: 100px;
+    padding-bottom: 80%;
+}
+
+#username {
+    float: left;
+}
+
+#timestamp {
+    float:right;
+}
+
+#textArea {
+    border: 1px black dotted;
+    height: 95%;
+    width: 95%;
+}
