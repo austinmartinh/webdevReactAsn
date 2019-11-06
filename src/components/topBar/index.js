@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import './topBar.css';
-
+import {Navbar, Nav} from 'react-bootstrap'
 
 class TopBar extends Component {
   render() {
     return (
       <fragment>
-          <nav class="topBar">
-              <div class="pageHeading">
-                <h1 class ="headerText">Social Web</h1>
-              </div>
-          </nav>
+          <Navbar bg="primary" variant="dark" fixed="top">
+                <Navbar.Brand>Social Web</Navbar.Brand>
+              <Nav justify-content="end">
+                <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link href="/reg">Register</Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link href="/feed">Feed</Nav.Link></Nav.Item>
+              </Nav>
+          </Navbar>
       </fragment>
     );
   }
 }
-
 export default TopBar;
