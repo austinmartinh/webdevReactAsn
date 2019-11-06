@@ -1,12 +1,15 @@
 import React, { Component, Fragment } from "react";
 import './loginForm.css';
-import {Form,Button } from 'react-bootstrap'
+import {Form,Button, Card} from 'react-bootstrap'
 
 class LoginForm extends Component{
     render() {
         return <fragment>
-            <div class="loginBox">
+            <Card class="loginBox">
+            <Card.Header>Login</Card.Header>
+            <Card.Body>
             <Form>
+      
                 <Form.Group controlId="usernameLogin">
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="text" placeholder="Username"></Form.Control>
@@ -20,7 +23,8 @@ class LoginForm extends Component{
                 </Form.Group>
 
             </Form>
-            </div>
+            </Card.Body>
+            </Card>
         </fragment>
     }
 }
