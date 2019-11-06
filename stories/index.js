@@ -10,12 +10,15 @@ import CreateForm from "../src/components/createForm/index";
 import Post from "../src/components/post/index";
 import Feed from "../src/components/feed/index";
 
-const testPost= {}
+const testPost1= {id:1,user:"testUser",time:"1:45",body:"This is test post number 1"}
+const testPost2= {id:2,user:"testUser2",time:"2:45",body:"This is test post number 2\n also contains a second line"}
+const testPost3= {id:3,user:"testUser3",time:"3:45",body:"This is test post number 3\n also contains \na third line"}
+
 
 var testPosts =[ 
-  {...testPost},
-    {...testPost},
-    {...testPost}
+  {...testPost1},
+    {...testPost2},
+    {...testPost3}
 ]
 storiesOf("Navigation/TopBar", module).add("default", () => {
   return <TopBar />;
@@ -38,7 +41,7 @@ storiesOf("Forms/CreatePost",module).add("default", () => {
 });
 
 storiesOf("Content/Post",module).add("default", () => {
-  return <Post />;
+  return <Post post={testPost1}/>;
 });
 
 storiesOf("Content/Feed",module).add("default", () => {

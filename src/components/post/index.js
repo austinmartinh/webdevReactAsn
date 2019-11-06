@@ -22,14 +22,14 @@ class Post extends Component{
                     <Col>
                         <Row>
                             <Col id="username">
-                            UserName
+                            {this.props.post.user}
                             </Col>
                             <Col id="timestamp">
-                            Timestamp
+                            {this.props.post.time}
                             </Col>
                         </Row>
                         <Row id="textArea">
-                            
+                            {this.props.post.body}
                         </Row>
                     </Col>
                 </Row>
