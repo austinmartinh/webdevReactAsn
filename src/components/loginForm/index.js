@@ -3,6 +3,14 @@ import './loginForm.css';
 import {Form,Button, Card} from 'react-bootstrap'
 
 class LoginForm extends Component{
+    // constructor(props) {
+    //     super(props);
+    //     this.state ={
+    //         userName='',
+    //         password=''
+    //     }
+    // }
+
     render() {
         return <fragment>
             <Card class="loginBox">
