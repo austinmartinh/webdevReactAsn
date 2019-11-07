@@ -10,7 +10,7 @@ class TopBar extends Component {
                 <Navbar.Brand>Social Web</Navbar.Brand>
               <Nav justify-content="end">
                 <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link href="/reg">Register</Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/feed">Feed</Nav.Link></Nav.Item>
               </Nav>
           </Navbar>
