@@ -11,12 +11,14 @@ class SideBar extends Component {
                   <img class="logo"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRug2UCLT7maYYq9wpvyhdwo_BPAFvqU_-qVg7RtcdYSbOZzC&s"></img>
                 </div>
                 <div id="leftNav">
-                    <ButtonGroup vertical>
+                  <div>
+                    <ButtonGroup vertical id="navButtonList">
                         <Button variant="secondary">Login</Button>
                         <Button variant="secondary">Register</Button>
                         <Button variant="secondary">Post</Button>
                         <Button variant="secondary">Feed</Button>
                     </ButtonGroup>
+                    </div>
                 </div>
             </nav>
         </fragment>

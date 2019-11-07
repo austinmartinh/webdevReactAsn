@@ -21,16 +21,19 @@
 
 #leftNav {
     height:100%;
+    min-height: 200px;
     margin-top: 30px;
-    padding-bottom: 30px;
+    display:flex;
+    justify-content:center;
 }
 
 #navButtonList {
     list-style:  none;
-    align-items: left; 
+    align-items: center; 
+
 }
 
-]
+
 
 .logo {
     display: block;
