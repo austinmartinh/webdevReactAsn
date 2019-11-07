@@ -9,6 +9,7 @@ import RegistrationForm from "../src/components/registrationForm/index";
 import CreateForm from "../src/components/createForm/index";
 import Post from "../src/components/post/index";
 import Feed from "../src/components/feed/index";
+import Landing from "../src/components/landing/index";
 
 
 const testPost1= {id:1,user:"testUser",time:"1:45",body:"This is test post number 1"}
@@ -51,4 +52,7 @@ storiesOf("Content/Feed",module).add("default", () => {
   return <Feed posts={testPosts} />;
 });
 
+storiesOf("Content/Landing",module).add("default", () => {
+  return <Landing />;
+});
 

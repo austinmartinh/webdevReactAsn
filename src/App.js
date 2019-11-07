@@ -13,6 +13,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import CreateForm from './components/createForm';
+import Landing from './components/landing';
 
 
 
@@ -27,9 +29,11 @@ function App() {
         <Col>
         <Router>
           <Switch>
-            <Route path="/Login"><LoginForm /></Route>
-            <Route path="/Register"><RegistrationForm /></Route>
+            <Route exact path="/"><Landing /></Route>
+            <Route path="/login"><LoginForm /></Route>
+            <Route path="/register"><RegistrationForm /></Route>
             {/* <Route path="/Feed"><Feed /></Route> */}
+            <Route path ="create"><CreateForm /></Route>
           </Switch>
         </Router>
         </Col>
