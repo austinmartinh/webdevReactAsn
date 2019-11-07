@@ -4,6 +4,7 @@
     height: 80px;
     padding-top: 0px;
     line-height: 80px;
+    justify-content:end;
 }
 
 .pageHeading h1 {

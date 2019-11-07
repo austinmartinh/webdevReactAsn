@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import './topBar.css';
+// import './topBar.css';
 import {Navbar, Nav} from 'react-bootstrap'
+
 
 class TopBar extends Component {
   render() {
     return (
-      <fragment>
           <Navbar bg="primary" variant="dark" fixed="top">
                 <Navbar.Brand>Social Web</Navbar.Brand>
               <Nav justify-content="end">
@@ -14,7 +14,6 @@ class TopBar extends Component {
                 <Nav.Item><Nav.Link href="/feed">Feed</Nav.Link></Nav.Item>
               </Nav>
           </Navbar>
-      </fragment>
     );
   }
 }
