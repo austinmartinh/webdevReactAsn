@@ -32,7 +32,7 @@ function App() {
             <Route exact path={ROUTES.HOME}><Landing /></Route>
             <Route path={ROUTES.LOGIN}><LoginForm /></Route>
             <Route path={ROUTES.REGISTER}><RegistrationForm /></Route>
-            {/* <Route path={ROUTES.FEED}><Feed /></Route> */}
+            <Route path={ROUTES.FEED}><Feed /></Route>
             <Route path ={ROUTES.CREATE}><CreateForm /></Route>
           </Switch>
         </Router>
