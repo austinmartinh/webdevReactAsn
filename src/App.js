@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 import CreateForm from './components/createForm';
 import Landing from './components/landing';
-
+import * as ROUTES from './routes'
 
 
 function App() {
@@ -29,11 +29,11 @@ function App() {
         <Col>
         <Router>
           <Switch>
-            <Route exact path="/"><Landing /></Route>
-            <Route path="/login"><LoginForm /></Route>
-            <Route path="/register"><RegistrationForm /></Route>
-            {/* <Route path="/Feed"><Feed /></Route> */}
-            <Route path ="create"><CreateForm /></Route>
+            <Route exact path={ROUTES.HOME}><Landing /></Route>
+            <Route path={ROUTES.LOGIN}><LoginForm /></Route>
+            <Route path={ROUTES.REGISTER}><RegistrationForm /></Route>
+            {/* <Route path={ROUTES.FEED}><Feed /></Route> */}
+            <Route path ={ROUTES.CREATE}><CreateForm /></Route>
           </Switch>
         </Router>
         </Col>
