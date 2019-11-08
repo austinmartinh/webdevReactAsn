@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import './createForm.css';
-import {Form,Button, Card, Col, Row,TextArea} from 'react-bootstrap'
+import {Form,Button, Card, Col, Row} from 'react-bootstrap'
 
 class CreateForm extends Component{
     render() {
@@ -16,7 +16,7 @@ class CreateForm extends Component{
                 <Row id="textArea">
                             <Form>
                                 <Form.Group>
-                                    <Form.Control as={TextArea} placeholder="Whats on your mind?">
+                                    <Form.Control placeholder="Whats on your mind?">
                                     </Form.Control>
                                 </Form.Group>
                             </Form>
