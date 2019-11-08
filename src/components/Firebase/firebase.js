@@ -36,5 +36,5 @@ const firebaseConfig = {
       this.auth.currentUser.updatePassword(password);
 
     
-    }
+  }
   export default Firebase;

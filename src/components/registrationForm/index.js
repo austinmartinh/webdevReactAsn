@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import './registrationForm.css';
 import {Form,Button,Card, Col} from 'react-bootstrap'
-
+import ROUTES from '../../routes'
 const initialState={
     fname:"",
     sname:"",
     email:"",
     password:"",
-    confirmPassword:""
+    confirmedPassword:""
 }
 
 
@@ -29,43 +29,53 @@ class RegistrationForm extends Component{
     }
     
     render() {
+        const {
+            fname,
+            sname,
+            email,
+            password,
+            confirmedPassword
+        }
+        
         return <Card>
             <Card.Header>Register</Card.Header>
                 <Card.Body>
-                    <Form>
+                    <Form onSubmit={this.onSubmit}>
                         <Form.Row>
                                 <Form.Group as={Col} >
                                     <Form.Control 
                                         onChange={this.onChange} 
-                                        id="fname" 
+                                        name="fname"
+                                        value={fname}
                                         placeholder="First Name">
                                     </Form.Control>
                                 </Form.Group>
                                 <Form.Group as={Col} >
                                     <Form.Control 
                                         onChange={this.onChange} 
-                                        id="sname"
+                                        name="sname"
+                                        value={sname}
                                         placeholder="Surname">
                                     </Form.Control>
                                 </Form.Group>
-                        </Form.Row>
-                    
+                        </Form.Row>  
                         <Form.Group>
                             <Form.Label>Username</Form.Label>
                             <Form.Control 
                                 onChange={this.onChange} 
-                                id="email" 
+                                name="email" 
+                                value={email}
                                 type="email" 
                                 placeholder="email">
                             </Form.Control>
                         </Form.Group>
-
                         <Form.Row>
                                 <Form.Group as={Col} >
                                     <Form.Label>Select a Password</Form.Label>
                                     <Form.Control 
                                         onChange={this.onChange} 
-                                        id="password" 
+                                        name="password"
+                                        value={password} 
                                         placeholder="*********">
                                     </Form.Control>
                                 </Form.Group>
@@ -73,18 +83,14 @@ class RegistrationForm extends Component{
                                     <Form.Label>Confirm Password</Form.Label>
                                     <Form.Control 
                                         onChange={this.onChange} 
-                                        id="confirmPassword" 
+                                        name="confirmedPassword" 
+                                        value={confirmedPassword}
                                         placeholder="*********">
                                     </Form.Control>
                                 </Form.Group>
                         </Form.Row>
-
-                       
-                        <div class="spaceButtonsOut">
-                                    <Button variant="danger" size="lg">Cancel</Button>
-                                    <Button variant="primary" size="lg">Register</Button>
-                        </div>
-              
+                                    <Button variant="danger" size="lg" href={ROUTES.HOME}>Cancel</Button>
+                                    <Button variant="primary" size="lg" type="submit">Register</Button>
                     </Form>
                 </Card.Body>
             </Card>
