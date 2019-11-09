@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 
-const firebaseConfig = {
+const config = {
     apiKey: "AIzaSyA45Jmy5wHwMHKYyYRvhuejhSglAYPak24",
     authDomain: "socweb-austin.firebaseapp.com",
     databaseURL: "https://socweb-austin.firebaseio.com",

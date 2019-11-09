@@ -9,7 +9,7 @@ class SideBar extends Component {
           <div id="sidebarContainer">
             <nav id="sideBar">
                 <div id="imageHolder">
-                  <img class="logo"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRug2UCLT7maYYq9wpvyhdwo_BPAFvqU_-qVg7RtcdYSbOZzC&s"></img>
+                  <img alt="default-Img" class="logo"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRug2UCLT7maYYq9wpvyhdwo_BPAFvqU_-qVg7RtcdYSbOZzC&s"></img>
                 </div>
                 <div id="leftNav">
                     <ButtonGroup vertical id="navButtonList">

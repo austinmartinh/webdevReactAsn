@@ -5,7 +5,7 @@ import {Col,Button, Jumbotron} from 'react-bootstrap';
 
 class Landing extends Component{
     render() {
-       return <fragment>
+       return <Fragment>
            <Jumbotron>
                <h1>Welcome to SocialWeb</h1>
                <p>It appears you're not logged in, so click below to sign up or login!</p>
@@ -14,7 +14,7 @@ class Landing extends Component{
                     <Col><Button href="/login" variant="primary">Login</Button></Col>
                </div>
             </Jumbotron>
-        </fragment>
+        </Fragment>
     }
 }
 export default Landing;

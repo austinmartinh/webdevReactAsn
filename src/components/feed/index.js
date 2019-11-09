@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import './feed.css';
-import {Form,Button, Card} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 import Post from "../post/index"
 
 class Feed extends Component{

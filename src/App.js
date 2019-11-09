@@ -10,8 +10,7 @@ import SideBar from './components/sideBar'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import CreateForm from './components/createForm';
 import Landing from './components/landing';

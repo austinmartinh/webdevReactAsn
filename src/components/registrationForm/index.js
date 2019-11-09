@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import {Form,Button, Col} from 'react-bootstrap';
 import './registrationForm.css';
-import {Form,Button,Card, Col} from 'react-bootstrap'
-import ROUTES from '../../routes'
+
+import {withFirebase} from '../Firebase';
+import * as ROUTES from '../../routes';
+// import { CardHeader, CardBody } from "react-bootstrap/Card";
+import { withRouter } from 'react-router-dom';
+
 const initialState={
     fname:"",
     sname:"",
@@ -11,12 +16,12 @@ const initialState={
 }
 
 
-class RegistrationForm extends Component{
+class RegistrationFormBase extends Component{
    
     constructor(props){
         super(props);
         this.state ={...initialState}
-    }
+    };
 
     onChange = event => {
         this.setState({[event.target.name]: event.target.value });
@@ -25,8 +30,15 @@ class RegistrationForm extends Component{
 
     onSubmit = event => {
         const {fname,sname,email,password} = this.state;
-        
-    }
+
+        this.props.firebase
+            .doCreateUserWithEmailAndPassword(fname,sname,email,password)
+            .then(authUser => {
+                this.setState({ ...initialState});
+                this.props.history.push(ROUTES.FEED);
+        });
+        event.preventDefault();
+    };
     
     render() {
         const {
@@ -34,12 +46,9 @@ class RegistrationForm extends Component{
             sname,
             email,
             password,
-            confirmedPassword
-        }
+            confirmedPassword} = this.state;
         
-        return <Card>
-            <Card.Header>Register</Card.Header>
-                <Card.Body>
+    return <Fragment>
                     <Form onSubmit={this.onSubmit}>
                         <Form.Row>
                                 <Form.Group as={Col} >
@@ -90,11 +99,23 @@ class RegistrationForm extends Component{
                                 </Form.Group>
                         </Form.Row>
                                     <Button variant="danger" size="lg" href={ROUTES.HOME}>Cancel</Button>
-                                    <Button variant="primary" size="lg" type="submit">Register</Button>
+                                    <Button variant="success" size="lg" type="submit">Register</Button>
                     </Form>
-                </Card.Body>
-            </Card>
-
+            </Fragment>
     }
 }
-export default RegistrationForm;
+
+const RegistrationForm = withRouter(withFirebase(RegistrationFormBase));
+
+const RegistrationPanel = () => (
+    <Fragment>
+        {/* <Card>          
+            <CardHeader>Register Below</CardHeader>
+            <CardBody> */}
+                <RegistrationForm />
+            {/* </CardBody>    
+        </Card> */}
+    </Fragment>
+);
+
+export default RegistrationPanel;

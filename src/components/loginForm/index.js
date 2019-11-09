@@ -12,7 +12,7 @@ class LoginForm extends Component{
     // }
 
     render() {
-        return <fragment>
+        return <Fragment>
             <Card class="loginBox">
             <Card.Header>Login</Card.Header>
             <Card.Body>
@@ -33,7 +33,7 @@ class LoginForm extends Component{
             </Form>
             </Card.Body>
             </Card>
-        </fragment>
+        </Fragment>
     }
 }
 export default LoginForm;

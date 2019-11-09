@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import './post.css';
-import {Form,Button, Card, Col, Row} from 'react-bootstrap'
+import {Button, Card, Col, Row} from 'react-bootstrap'
 
 class Post extends Component{
     render() {
