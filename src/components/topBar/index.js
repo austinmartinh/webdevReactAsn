@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import './topBar.css';
 import {Navbar, Nav} from 'react-bootstrap'
+import SignOut from "../signOut";
 
 
 class TopBar extends Component {
@@ -16,6 +16,7 @@ class TopBar extends Component {
               <Nav className="ml-auto">
                 <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
+                <Nav.Item> <SignOut/> </Nav.Item>
               </Nav>
           </Navbar>
     );
