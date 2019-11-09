@@ -4,8 +4,8 @@ import './registrationForm.css';
 
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../routes';
-// import { CardHeader, CardBody } from "react-bootstrap/Card";
 import { withRouter } from 'react-router-dom';
+import {Card}  from "react-bootstrap";
 
 const initialState={
     fname:"",
@@ -32,7 +32,7 @@ class RegistrationFormBase extends Component{
         const {fname,sname,email,password} = this.state;
 
         this.props.firebase
-            .doCreateUserWithEmailAndPassword(fname,sname,email,password)
+            .doCreateUserWithEmailAndPassword(email,password)
             .then(authUser => {
                 this.setState({ ...initialState});
                 this.props.history.push(ROUTES.FEED);
@@ -46,9 +46,12 @@ class RegistrationFormBase extends Component{
             sname,
             email,
             password,
-            confirmedPassword} = this.state;
+            confirmedPassword
+        } = this.state;
         
     return <Fragment>
+        <Card id="regForm">
+            <Card.Header>Register Here</Card.Header>
                     <Form onSubmit={this.onSubmit}>
                         <Form.Row>
                                 <Form.Group as={Col} >
@@ -69,7 +72,7 @@ class RegistrationFormBase extends Component{
                                 </Form.Group>
                         </Form.Row>  
                         <Form.Group>
-                            <Form.Label>Username</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control 
                                 onChange={this.onChange} 
                                 name="email" 
@@ -85,6 +88,7 @@ class RegistrationFormBase extends Component{
                                         onChange={this.onChange} 
                                         name="password"
                                         value={password} 
+                                        type="password"
                                         placeholder="*********">
                                     </Form.Control>
                                 </Form.Group>
@@ -94,6 +98,7 @@ class RegistrationFormBase extends Component{
                                         onChange={this.onChange} 
                                         name="confirmedPassword" 
                                         value={confirmedPassword}
+                                        type="password"
                                         placeholder="*********">
                                     </Form.Control>
                                 </Form.Group>
@@ -101,6 +106,7 @@ class RegistrationFormBase extends Component{
                                     <Button variant="danger" size="lg" href={ROUTES.HOME}>Cancel</Button>
                                     <Button variant="success" size="lg" type="submit">Register</Button>
                     </Form>
+                </Card>
             </Fragment>
     };
 };
@@ -109,12 +115,7 @@ const RegistrationForm = withRouter(withFirebase(RegistrationFormBase));
 
 const RegistrationPanel = () => (
     <Fragment>
-        {/* <Card>          
-            <CardHeader>Register Below</CardHeader>
-            <CardBody> */}
                 <RegistrationForm />
-            {/* </CardBody>    
-        </Card> */}
     </Fragment>
 );
 
