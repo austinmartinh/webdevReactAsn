@@ -7,8 +7,8 @@ import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../routes';
 
 const intitialState = {
-    email: "",
-    password: ""
+    email: '',
+    password: ''
 }
 
 class LoginFormBase extends Component{
@@ -21,13 +21,15 @@ class LoginFormBase extends Component{
     onSubmit = event => {
         const { email,password} = this.state;
 
-        this.props.firebase.doSignInWithEmailAndPassword(email,password)
-        .then( () => {
+        this.props.firebase
+        .doSignInWithEmailAndPassword(email,password)
+        .then(() => {
             this.setState({...intitialState});
             this.props.history.push(ROUTES.FEED);
         });
         event.preventDefault();
     };
+    
 
     onChange = event => {
         this.setState({ [event.target.name]:event.target.value});
@@ -36,13 +38,13 @@ class LoginFormBase extends Component{
     render() {
         const {email,password} = this.state;
         
-        const emptyInput = password==="" ||email==="";
+        const emptyInput = password==='' ||email==='';
 
         return <Fragment>
             <Card class="loginBox">
                 <Card.Header>Login</Card.Header>
                 <Card.Body>
-                    <Form>
+                    <Form onSubmit={this.onSubmit}>
                         <Form.Group controlId="usernameLogin">
                             <Form.Label>Email</Form.Label>
                             <Form.Control
@@ -63,9 +65,9 @@ class LoginFormBase extends Component{
                                 onChange={this.onChange}>
                             </Form.Control>
                         </Form.Group>
-                        <Form.Group>
-                            <Button disabled = {emptyInput} type="success">Login</Button>
-                        </Form.Group>
+                       {/* <Form.Group>*/}
+                             <Button type="submit">Login</Button>
+                      {/*}  </Form.Group> */}
                     </Form>
                 </Card.Body>
             </Card>
