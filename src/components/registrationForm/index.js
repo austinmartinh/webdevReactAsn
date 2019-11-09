@@ -102,8 +102,8 @@ class RegistrationFormBase extends Component{
                                     <Button variant="success" size="lg" type="submit">Register</Button>
                     </Form>
             </Fragment>
-    }
-}
+    };
+};
 
 const RegistrationForm = withRouter(withFirebase(RegistrationFormBase));
 
