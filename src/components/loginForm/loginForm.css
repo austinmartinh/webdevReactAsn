@@ -1,7 +1,6 @@
-.loginBox {
+#loginBox {
     width: 65%;
-    padding: 10%;
-    margin: 20px;
+    margin-top: 80px;
     border: 6px black solid;
     background-color: lightsteelblue;
     align-content: center;

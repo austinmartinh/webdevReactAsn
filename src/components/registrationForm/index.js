@@ -38,6 +38,8 @@ class RegistrationFormBase extends Component{
                 this.props.history.push(ROUTES.FEED);
         });
         event.preventDefault();
+
+        //Have to do something with name here to assign to a user
     };
     
     render() {
