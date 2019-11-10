@@ -27,7 +27,7 @@ const config = {
     doSignInWithEmailAndPassword = (email,password) =>
         this.auth.signInWithEmailAndPassword(email,password); 
 
-    doSignOut = () => this.doSignOut();
+    doSignOut = () => this.auth.signOut();
 
     doResetPassword = (email) =>
       this.auth.sendPasswordResetEmail(email);
