@@ -13,31 +13,59 @@ import {
   Route
 } from "react-router-dom";
 
+import './navigation.css'
+
 import * as ROUTES from '../../routes'
 
 
-const initialState = {
-  authUser:false
-}
+// const initialState = {
+//   authUser:false
+// }
 
-class TopBar extends Component {
+class Navigation extends Component {
   constructor(props){
     super(props)
     this.state = {...initialState}
   }
 
   render() {
+    if (this.authUser)
+    {
+      return (
+        <Fragment>
+        <Navbar bg="primary" variant="dark" fixed="top">
+              <Navbar.Brand to="/">Social Web</Navbar.Brand>
+            <Nav className="mr-auto">
+              <NavLink className="unselected" activeClassName="active" to={ROUTES.FEED}>Feed</NavLink>
+              <NavLink className="unselected" activeClassName="active" to="/create">Create</NavLink>
+              <NavLink className="unselected" activeClassName="active" to="/delete">Delete</NavLink>
+              </Nav>
+            <Nav className="ml-auto">
+              <NavLink className="unselected" activeClassName="active" to="/delete">Sign Out </NavLink>
+            </Nav>
+        </Navbar>
+
+      <Switch>
+        <Route exact path={ROUTES.HOME}><Landing /></Route>
+        <Route path={ROUTES.LOGIN}><LoginForm /></Route>
+        <Route path={ROUTES.REGISTER}><RegistrationForm /></Route>
+        <Route path={ROUTES.FEED}><Feed /></Route>
+        <Route path ={ROUTES.CREATE}><CreateForm /></Route>
+      </Switch>
+
+
+    </Fragment>
+      );
+    }
+
+
     return (
       <Fragment>
           <Navbar bg="primary" variant="dark" fixed="top">
                 <Navbar.Brand>Social Web</Navbar.Brand>
-              <Nav className="mr-auto">
-                <NavLink className="unselected" activeClassName="active" to="/feed">Feed</NavLink>
-                <NavLink className="unselected" activeClassName="active" to="/create">Create</NavLink>
-                <NavLink className="unselected" activeClassName="active" to="/delete">Delete</NavLink>
-                </Nav>
+        
               <Nav className="ml-auto">
-                {/* <NavLink> <SignOut/> </NavLink> */}
+        
                 <NavLink className="unselected" activeClassName="active" to="/login">Login</NavLink>
                 <NavLink className="unselected" activeClassName="active" to="/register">Register</NavLink>
               
@@ -60,4 +88,4 @@ class TopBar extends Component {
                    
   }
 }
-export default TopBar;
+export default Navigation;

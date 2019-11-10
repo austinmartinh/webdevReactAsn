@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import TopBar from "../src/components/topBar/index"
-import "../src/components/topBar/topBar.css" 
+import Navigation from "./components/navigation/index"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router} from "react-router-dom";
@@ -34,7 +33,7 @@ render() {
 
   return (
           <Router>
-            <div><TopBar authUser={this.state.authUser} /></div>
+            <div><Navigation authUser={this.state.authUser} /></div>
           </Router>
   
     );
