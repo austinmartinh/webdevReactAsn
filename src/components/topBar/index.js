@@ -5,7 +5,6 @@ import SignOut from "../signOut";
 import LoginForm from '../loginForm';
 import Feed from "../feed"
 import RegistrationForm from "../registrationForm"
-import SideBar from '../sideBar'
 import CreateForm from '../createForm';
 import Landing from '../landing';
 import {

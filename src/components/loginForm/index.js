@@ -65,7 +65,7 @@ class LoginFormBase extends Component{
                                 onChange={this.onChange}>
                             </Form.Control>
                         </Form.Group>
-                             <Button type="submit">Login</Button>
+                             <Button isDisabled={emptyInput} type="submit">Login</Button>
                     </Form>
                 </Card.Body>
             </Card>

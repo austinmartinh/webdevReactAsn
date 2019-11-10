@@ -1,9 +1,7 @@
-import React, { Component, Fragment } from "react";
-import {Form,Button, Col} from 'react-bootstrap';
+import React from "react";
+import {Button} from 'react-bootstrap';
 import {withFirebase} from '../Firebase';
-import * as ROUTES from '../../routes';
-import { withRouter } from 'react-router-dom';
-import {Card}  from "react-bootstrap";
+
 
 const SignOut = ({firebase}) =>(
                 <Button 
