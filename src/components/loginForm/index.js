@@ -65,9 +65,7 @@ class LoginFormBase extends Component{
                                 onChange={this.onChange}>
                             </Form.Control>
                         </Form.Group>
-                       {/* <Form.Group>*/}
                              <Button type="submit">Login</Button>
-                      {/*}  </Form.Group> */}
                     </Form>
                 </Card.Body>
             </Card>
