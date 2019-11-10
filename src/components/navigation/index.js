@@ -18,18 +18,13 @@ import './navigation.css'
 import * as ROUTES from '../../routes'
 
 
-// const initialState = {
-//   authUser:false
-// }
+
 
 class Navigation extends Component {
-  constructor(props){
-    super(props)
-    this.state = {...initialState}
-  }
+
 
   render() {
-    if (this.authUser)
+    if (this.props.authUser)
     {
       return (
         <Fragment>
@@ -37,11 +32,11 @@ class Navigation extends Component {
               <Navbar.Brand to="/">Social Web</Navbar.Brand>
             <Nav className="mr-auto">
               <NavLink className="unselected" activeClassName="active" to={ROUTES.FEED}>Feed</NavLink>
-              <NavLink className="unselected" activeClassName="active" to="/create">Create</NavLink>
-              <NavLink className="unselected" activeClassName="active" to="/delete">Delete</NavLink>
+              <NavLink className="unselected" activeClassName="active" to={ROUTES.CREATE}>Create</NavLink>
+              <NavLink className="unselected" activeClassName="active" to={ROUTES.DELETE}>Delete</NavLink>
               </Nav>
             <Nav className="ml-auto">
-              <NavLink className="unselected" activeClassName="active" to="/delete">Sign Out </NavLink>
+              <SignOut />
             </Nav>
         </Navbar>
 
