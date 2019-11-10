@@ -13,3 +13,14 @@
     line-height: 80px;
 }
 
+.unselected {
+    color: white;
+    margin: 10px;
+}
+ 
+.active {
+    color: black;
+    margin: 10px;
+
+}
+

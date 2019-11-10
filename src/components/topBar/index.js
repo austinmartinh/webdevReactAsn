@@ -1,9 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {Navbar, Nav} from 'react-bootstrap'
+import {NavLink} from 'react-router-dom'
 import SignOut from "../signOut";
+import LoginForm from '../loginForm';
+import Feed from "../feed"
+import RegistrationForm from "../registrationForm"
+import SideBar from '../sideBar'
+import CreateForm from '../createForm';
+import Landing from '../landing';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import * as ROUTES from '../../routes'
+
 
 const initialState = {
-  loggedIn:false
+  authUser:false
 }
 
 class TopBar extends Component {
@@ -14,20 +29,32 @@ class TopBar extends Component {
 
   render() {
     return (
+      <Fragment>
           <Navbar bg="primary" variant="dark" fixed="top">
                 <Navbar.Brand>Social Web</Navbar.Brand>
               <Nav className="mr-auto">
-                <Nav.Item><Nav.Link to="/feed">Feed</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link to="/create">Create</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link to="/delete">Delete</Nav.Link></Nav.Item>
+                <NavLink className="unselected" activeClassName="active" to="/feed">Feed</NavLink>
+                <NavLink className="unselected" activeClassName="active" to="/create">Create</NavLink>
+                <NavLink className="unselected" activeClassName="active" to="/delete">Delete</NavLink>
                 </Nav>
               <Nav className="ml-auto">
-                <Nav.Item> <SignOut/> </Nav.Item>
-                <Nav.Item><Nav.Link to="/login">Login</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link to="/register">Register</Nav.Link></Nav.Item>
+                {/* <NavLink> <SignOut/> </NavLink> */}
+                <NavLink className="unselected" activeClassName="active" to="/login">Login</NavLink>
+                <NavLink className="unselected" activeClassName="active" to="/register">Register</NavLink>
               
               </Nav>
           </Navbar>
+
+        <Switch>
+          <Route exact path={ROUTES.HOME}><Landing /></Route>
+          <Route path={ROUTES.LOGIN}><LoginForm /></Route>
+          <Route path={ROUTES.REGISTER}><RegistrationForm /></Route>
+          <Route path={ROUTES.FEED}><Feed /></Route>
+          <Route path ={ROUTES.CREATE}><CreateForm /></Route>
+        </Switch>
+
+
+      </Fragment>
     );
 
   
