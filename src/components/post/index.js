@@ -2,6 +2,8 @@ import React, { Component, Fragment } from "react";
 import './post.css';
 import {Button, Card, Col, Row} from 'react-bootstrap'
 
+
+
 class Post extends Component{
     render() {
         return <Fragment>
@@ -22,14 +24,14 @@ class Post extends Component{
                     <Col>
                         <Row>
                             <Col id="username">
-                            {this.props.post.user}
+                            {this.props.user}
                             </Col>
                             <Col id="timestamp">
-                            {this.props.post.time}
+                            {this.props.time}
                             </Col>
                         </Row>
                         <Row id="textArea">
-                            {this.props.post.body}
+                            {this.props.postBody}
                         </Row>
                     </Col>
                 </Row>

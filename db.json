@@ -1,0 +1,27 @@
+{
+  "users":
+  [
+      {
+          "userId": 0,
+          "id": 0,
+          "email": "delectus aut autem",
+          "fname": "Test",
+          "sname": "Default"
+      }
+  ],
+  "posts": 
+  [
+      {
+          "postId":0,
+          "userId":0,
+          "time":"00:00",
+          "postBody":"1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+          "postId":-1,
+          "userId":0,
+          "time":"00:00",
+          "postBody":"2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+  ]
+}
