@@ -7,7 +7,7 @@ import axios from 'axios';
 const initialState ={
     postBody:'',
     user:'',
-    time:''
+    postId:''
 }
 
 
@@ -17,9 +17,9 @@ class CreateForm extends Component{
         this.state={...initialState};
     }
 
-    submitPost(postBody, user, time) {
+    submitPost(postBody, user, postId) {
       
-        axios.post(ROUTES.ALLPOSTS, {postBody:postBody,user:user, time:time
+        axios.post(ROUTES.ALLPOSTS, {postBody:postBody,user:user, postId:postId
         },  { headers: { 'Content-Type': 'application/json' } }
         ).then(res => {
             console.log(res);
@@ -29,10 +29,10 @@ class CreateForm extends Component{
 
     
     onSubmit = event => {
-        const {postBody,user,time} = this.state;
+        const {postBody,user,postId} = this.state;
 
         event.preventDefault();
-        this.submitPost(postBody,user,time);
+        this.submitPost(postBody,user,postId);
         this.setState({...initialState});
         // this.props.history.push(ROUTES.FEED);
       
@@ -54,7 +54,7 @@ class CreateForm extends Component{
               
                 <Row>
                     <Col id="userName">User{/*{this.props.user}*/}</Col>
-                    <Col id="timeStamp">Time{/*{this.props.time}*/}</Col>
+                    <Col id="postIdStamp">postId{/*{this.props.postId}*/}</Col>
                 </Row> 
                 <Form onSubmit={this.onSubmit}>
                     <Form.Group>

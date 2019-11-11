@@ -1,0 +1,22 @@
+
+{
+    "users": [
+      {
+        "id": "-1",
+        "username": "default",
+        "fname": "def",
+        "sname": "ault",
+        "email": "default@test.com",
+        "password":"pass"
+      },
+      {
+        "id": "-2",
+        "username": "default2",
+        "fname": "2def",
+        "sname": "ault2",
+        "email": "default2@test.com",
+        "password":"pass2"
+      }
+     
+    ]
+  }

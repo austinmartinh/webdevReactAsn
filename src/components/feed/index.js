@@ -38,7 +38,7 @@ class Feed extends Component{
 
     render() {
         const postObjects=this.state.posts.map(n => (
-            <Post key={n.id} postBody={n.postBody} username={n.user} time={n.time}/>
+            <Post key={n.id} postBody={n.postBody} username={n.user} postId={n.id}/>
           ));
 
         return <Fragment>

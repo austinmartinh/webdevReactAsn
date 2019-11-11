@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
-import TopBar from "../src/components/topBar/index.js";
+import Navigation from "../src/components/navigation/index.js";
 import SideBar from "../src/components/sideBar/index";
 import LoginForm from "../src/components/loginForm/index";
 import RegistrationForm from "../src/components/registrationForm/index";
@@ -25,7 +25,7 @@ var testPosts =[
 
 var headerInfo= {user:"testUser", time:"3:45"}
 storiesOf("Navigation/TopBar", module).add("default", () => {
-  return <TopBar />;
+  return < Navigation/>;
 });
 
 storiesOf("Navigation/SideBar", module).add("default", () => {

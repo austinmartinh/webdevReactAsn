@@ -8,26 +8,5 @@
       "sname": "Default"
     }
   ],
-  "posts": [
-    {
-      "id": 0,
-      "postId": 0,
-      "userId": 0,
-      "time": "00:00",
-      "postBody": "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "id": -1,
-      "postId": -1,
-      "userId": 0,
-      "time": "00:00",
-      "postBody": "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "postBody": "kk",
-      "user": "",
-      "time": "",
-      "id": 1
-    }
-  ]
+  "posts": []
 }
