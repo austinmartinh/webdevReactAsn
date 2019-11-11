@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import './feed.css';
 import {Card} from 'react-bootstrap';
 import axios from 'axios';
@@ -41,17 +41,16 @@ class Feed extends Component{
             <Post key={n.id} postBody={n.postBody} username={n.user} time={n.time}/>
           ));
 
-        return <fragment>
+        return <Fragment>
   
         
             <Card class="feed">
                 <Card.Header>Posts</Card.Header>
-                
                 <Card.Body>
                     {postObjects}
                 </Card.Body>
             </Card>
-        </fragment>
+        </Fragment>
 
     }
 }
