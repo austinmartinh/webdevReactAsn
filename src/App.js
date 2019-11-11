@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router} from "react-router-dom";
 import {withFirebase}  from './components/Firebase'
 
-
 class App extends Component {
 
 constructor(props){
@@ -32,10 +31,10 @@ componentWillUnmount() {
 render() {
 
   return (
+      
           <Router>
-            <div><Navigation authUser={this.state.authUser} /></div>
+            <div><Navigation authUser={this.state.authUser}/></div>
           </Router>
-  
     );
   }
 

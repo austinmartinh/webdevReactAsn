@@ -5,14 +5,19 @@ import {Col,Button, Jumbotron} from 'react-bootstrap';
 
 class Landing extends Component{
     render() {
+    if(this.props.authUser){
+        return <Fragment>
+        <Jumbotron>
+            <h1>Welcome back to SocialWeb</h1>
+            <p>Hope you have some interesting thoughts to share!</p>
+         </Jumbotron>
+     </Fragment>
+        
+    }
        return <Fragment>
            <Jumbotron>
                <h1>Welcome to SocialWeb</h1>
-               <p>It appears you're not logged in, so click below to sign up or login!</p>
-               <div>
-                    <Col><Button href="/register" variant="success">Register</Button></Col>
-                    <Col><Button href="/login" variant="primary">Login</Button></Col>
-               </div>
+               <p>Login in or sign up to share your thoughts with the world!</p>
             </Jumbotron>
         </Fragment>
     }
