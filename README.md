@@ -9,9 +9,16 @@ Social Web app for making posts publically. Users can sign up to make or delete 
 - Login/Signout
 - Create and delete posts made to a public feed
 
+Some bugs identifies during development. THe highlighted view should be shown in the navbar with black text instead of white. However as the home page url was / The home view is additionally seen as selected regardless of the view you are on. 
+
+The delete function deletes all, rather than the selected post. This appears to be an open issue so I was unable to find a solution. 
+https://github.com/typicode/json-server/issues/578
+
 ## Setup.
 
-. . . . Having cloned the repo, state the steps required to install and run the app . . . . .
+ - npm install
+ - npm run server
+ - npm start
 
 ## Data Model Design
 ~~~
@@ -29,8 +36,6 @@ Social Web app for making posts publically. Users can sign up to make or delete 
 Context API wraps app to keep track of user being logged in
 
 ## UI Design.
-
-. . . . . Screenshots of the app's views with brief statements of their use (see examples below) . . . . . . .
 
 <img src="./public/landingpagenonauth.png">
 
@@ -58,24 +63,27 @@ Context API wraps app to keep track of user being logged in
 
 
 
+
 ## Routing.
 
-. . . . List each route supported by the app. For each one state the associated view and whether it's public/private (requires authentication) . . . . .
-
-- / (public)- Welcome page - Public - Suggests login/registration, Private - Welcomes the user back
+- / (public)- Welcome page - Public - Suggests login/registration, (Private) - Welcomes the user back
 - /feed (private)- View all public posts made 
-+ /create (private) - submit a new post 
+- /create (private) - submit a new post 
+- /login (public) - page used to login to website
+- /register (public) - page used for new users to join the site
+
 
 ## Storybook.
 
 
-<img src="expandedStorytree.png">
+<img src="./public/expandedStorytree.png">
 This is the expanded story tree. Many stories ceased to function after adding context wrappers giving a bizarre error with very little information.
  
  ~~~
  You may not use a outside of a 
  ~~~
- 
+
+Because of this, I ceased using storybook to aid in developing the app though I did find it both intuitive and useful in the early stages of the app. 
 
 ## Backend 
 Json serverstores posts made by users. Axios used to generate get, post and delete requests.
