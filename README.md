@@ -1,68 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BSc (Hons.) Level 8 - Assignment 1 - Single Page app.
 
-## Available Scripts
+Name: Austin Heraughty
+## Overview.
 
-In the project directory, you can run:
+Social Web app for making posts publically. Users can sign up to make or delete posts.
 
-### `npm start`
+- Sign up
+- Login/Signout
+- Create and delete posts made to a public feed
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+. . . . Having cloned the repo, state the steps required to install and run the app . . . . .
 
-### `npm test`
+## Data Model Design
+~~~
+          
+          {FirebaseContextWrapper[App]}
+                |
+            [Navigation]
+   _______________|________________________________________
+   |           |           |           |                   |
+[Feed]      [CreateForm]  [Login]   [REgistrationForm]  [SignOut]
+   |
+[Post]
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+~~~
+Context API wraps app to keep track of user being logged in
 
-### `npm run build`
+## UI Design.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+. . . . . Screenshots of the app's views with brief statements of their use (see examples below) . . . . . . .
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<img src="./public/landingpagenonauth.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+>> Welcomes the user and encourages them to sign up. Nonauthorised Navbar seen at top of screen.
 
-### `npm run eject`
+<img src="./public/landingpageauth.png">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+>> As before, but returned to following login. NAvbar options have changed.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="./public/feed.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+>>Created posts listed here
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="./public/createForm.png">
 
-## Learn More
+>> This form used to take user input to post to feed
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="./public/loginForm.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>> This form used to register a user as a member of the website through firebase
 
-### Code Splitting
+<img src="./public/registrationForm.png">
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+>> This form takes user data and registers them as site users
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## Routing.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+. . . . List each route supported by the app. For each one state the associated view and whether it's public/private (requires authentication) . . . . .
 
-### Advanced Configuration
+- / (public)- Welcome page - Public - Suggests login/registration, Private - Welcomes the user back
+- /feed (private)- View all public posts made 
++ /create (private) - submit a new post 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Storybook.
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+<img src="expandedStorytree.png">
+This is the expanded story tree. Many stories ceased to function after adding context wrappers giving a bizarre error with very little information.
+ 
+ ~~~
+ You may not use a outside of a 
+ ~~~
+ 
 
-### `npm run build` fails to minify
+## Backend 
+Json serverstores posts made by users. Axios used to generate get, post and delete requests.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Authentication
+
+Firebase implemented for user registration. Signin/Signout handled by firebase, though no user personalisation implmented
+

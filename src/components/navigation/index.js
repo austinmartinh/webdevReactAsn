@@ -32,7 +32,6 @@ class Navigation extends Component {
               <NavLink className="unselected" activeClassName="active" to={ROUTES.HOME}>Home</NavLink>
               <NavLink className="unselected" activeClassName="active" to={ROUTES.FEED}>Feed</NavLink>
               <NavLink className="unselected" activeClassName="active" to={ROUTES.CREATE}>Create</NavLink>
-              <NavLink className="unselected" activeClassName="active" to={ROUTES.DELETE}>Delete</NavLink>
               </Nav>
             <Nav className="ml-auto">
               <SignOut />
