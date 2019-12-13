@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from "./components/navigation/index"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import {withFirebase}  from './components/Firebase'
 
 class App extends Component {

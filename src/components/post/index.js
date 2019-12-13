@@ -2,7 +2,8 @@ import React, { Component, Fragment } from "react";
 import './post.css';
 import {Button, Card, Col, Row} from 'react-bootstrap'
 import { MDBIcon } from 'mdbreact';
-import axios from 'axios'
+import * as api from '../../api';
+import axios from 'axios';
 
 
 
@@ -10,10 +11,19 @@ import axios from 'axios'
 class Post extends Component{
 
     onClick= event => {
-        axios.delete(`http://localhost:3333/posts/${this.props.postId}`,
-                 {headers: { 'Content-Type': 'application/json' }})
-                .then(res => console.log(res.data));
+        // axios.delete(`http://localhost:3333/posts/${this.props.postId}`,
+        //          {headers: { 'Content-Type': 'application/json' }})
+        //         .then(res => console.log(res.data));
+
+    //     api.deletePost(postId)
+    //         .then(resp =>
+    //             this.)
     }
+
+    upvoteThisPost = () => {
+        this.props.upvoteHandler(this.props.id)
+        console.log('pressed')
+    };
 
     render() {
         return <Fragment>
@@ -38,10 +48,11 @@ class Post extends Component{
                     <Col>
                         <Row>
                             <Col id="username">
-                            {this.props.user}
+                            {this.props.username}
                             </Col>
-                            <Col id="timestamp">
-                            {this.props.postId}
+                            <Col id="upvotes">
+                            {this.props.upvotes}
+                            <Button classname="ml-auto" onClick={this.upvoteThisPost}>Upvote! </Button>
                             </Col>
                         </Row>
                         <Row id="textArea">

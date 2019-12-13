@@ -4,6 +4,8 @@ import {Card} from 'react-bootstrap';
 import axios from 'axios';
 import * as ROUTES from '../../routes'
 import Post from "../post/index";
+import * as api from '../../api';
+import _ from 'lodash';
 
 
 const initialState ={
@@ -20,25 +22,31 @@ class Feed extends Component{
     }
 
     getAllPosts(){
-        axios.get(ROUTES.ALLPOSTS)
-            .then(res =>{
-                this.setState({posts:res.data});
-            });
+        api.getAll()
+            .then(resp => {
+                this.setState({posts:resp});
+            }).catch(console.error);
+    };
+
+    upvotePost = (id) => {
+        api.upvote(id)
+        .then(resp=> {
+            var upvotedPost = findById(this.state.posts, post => post.id ===id);
+            console.log(upvotedPost.upvotes)
+            upvotedPost.upvotes+=1;
+        });
     }
 
     componentDidMount()
     {
-    this.getAllPosts();
-    
-    
-
+     this.getAllPosts();
     }
     
     
 
     render() {
         const postObjects=this.state.posts.map(n => (
-            <Post key={n.id} postBody={n.postBody} username={n.user} postId={n.id}/>
+            <Post key={n._id} postBody={n.postBody} username={n.username} upvotes={n.upvotes} upvoteHandler={this.upvotePost} postId={n._id}/>
           ));
 
         return <Fragment>

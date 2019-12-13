@@ -11,12 +11,14 @@
     float: left;
 }
 
-#timestamp {
-    float:right;
-}
+
 
 #textArea {
     border: 1px black dotted;
     height: 95%;
     width: 95%;
+}
+
+#upvotes {
+    float: right;
 }

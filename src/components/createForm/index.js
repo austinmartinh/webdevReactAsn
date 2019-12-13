@@ -3,11 +3,11 @@ import './createForm.css';
 import {Form,Button, Card, Col, Row} from 'react-bootstrap'
 import * as ROUTES from '../../routes'
 import axios from 'axios';
+import * as api from '../../api'
 
 const initialState ={
     postBody:'',
-    user:'',
-    postId:''
+    username:''
 }
 
 
@@ -17,26 +17,25 @@ class CreateForm extends Component{
         this.state={...initialState};
     }
 
-    submitPost(postBody, user, postId) {
+
+    onSubmit = event => {
+        event.preventDefault();
+        const {username, postBody} = this.state;
+        console.log(postBody)
+        this.submitPost(username, postBody);
+        this.setState({...initialState});
       
-        axios.post(ROUTES.ALLPOSTS, {postBody:postBody,user:user, postId:postId
-        },  { headers: { 'Content-Type': 'application/json' } }
-        ).then(res => {
-            console.log(res);
-            console.log(res.data);
-        }).catch(err => console.log(err));
+    };
+
+
+    submitPost = async (username, postBody) => {
+      
+       await api.addPost(username, postBody)
+   
     };
 
     
-    onSubmit = event => {
-        const {postBody,user,postId} = this.state;
-
-        event.preventDefault();
-        this.submitPost(postBody,user,postId);
-        this.setState({...initialState});
-        // this.props.history.push(ROUTES.FEED);
-      
-    };
+   
 
     onChange = event => {
         this.setState({[event.target.name]: event.target.value });
@@ -53,8 +52,7 @@ class CreateForm extends Component{
             <Card.Body>
               
                 <Row>
-                    <Col id="userName">User{/*{this.props.user}*/}</Col>
-                    <Col id="postIdStamp">postId{/*{this.props.postId}*/}</Col>
+                    <Col id="userName">User: {this.props.username}</Col>
                 </Row> 
                 <Form onSubmit={this.onSubmit}>
                     <Form.Group>
@@ -66,7 +64,7 @@ class CreateForm extends Component{
                         </Form.Control>
                     </Form.Group>
                     <Button variant="danger">Cancel</Button>
-                    <Button isDisabled={emptyInput} type="submit" variant="success">Post</Button>
+                    <Button isdisabled={emptyInput} type="submit" variant="success">Post</Button>
                 </Form>
                
             </Card.Body>
